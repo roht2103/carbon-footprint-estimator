@@ -102,13 +102,21 @@ export default function Results() {
               <span className="text-xl font-bold text-gray-800">EcoTracker</span>
             </div>
           </div>
-          <UserButton 
-            appearance={{
-              elements: {
-                avatarBox: "w-10 h-10"
-              }
-            }}
-          />
+          <div className="flex items-center space-x-4">
+            <button
+              onClick={() => router.push('/profile')}
+              className="px-4 py-2 text-green-600 hover:text-green-700 transition-colors"
+            >
+              Profile
+            </button>
+            <UserButton 
+              appearance={{
+                elements: {
+                  avatarBox: "w-10 h-10"
+                }
+              }}
+            />
+          </div>
         </div>
       </nav>
 

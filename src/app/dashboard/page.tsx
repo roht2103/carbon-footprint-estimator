@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { UserButton, useUser } from '@clerk/nextjs';
 import { Leaf, Calculator, Loader2, TrendingUp } from 'lucide-react';
@@ -32,6 +32,29 @@ export default function Dashboard() {
   const [result, setResult] = useState<PredictionResult | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+
+  // Ensure user exists in database on first visit
+  useEffect(() => {
+    const ensureUserExists = async () => {
+      try {
+        const response = await fetch('/api/users');
+        if (response.status === 404) {
+          // User doesn't exist, create them
+          await fetch('/api/users', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({}),
+          });
+        }
+      } catch (error) {
+        console.log('Note: User creation will happen on profile visit');
+      }
+    };
+
+    if (user) {
+      ensureUserExists();
+    }
+  }, [user]);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
@@ -78,6 +101,12 @@ export default function Dashboard() {
             <span className="text-xl font-bold text-gray-800">EcoTracker</span>
           </div>
           <div className="flex items-center space-x-4">
+            <button
+              onClick={() => router.push('/profile')}
+              className="px-4 py-2 text-green-600 hover:text-green-700 transition-colors"
+            >
+              Profile
+            </button>
             <button
               onClick={() => router.push('/results')}
               className="px-4 py-2 text-green-600 hover:text-green-700 transition-colors"
