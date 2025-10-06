@@ -42,7 +42,7 @@ export async function POST(request: NextRequest) {
     };
 
     // Call FastAPI model endpoint
-    const fastApiUrl = process.env.FASTAPI_MODEL_URL || 'https://carbon-model-api.onrender.com';
+    const fastApiUrl = process.env.FASTAPI_MODEL_URL || 'http://localhost:5000';
     const modelResponse = await fetch(`${fastApiUrl}/predict`, {
       method: 'POST',
       headers: {
