@@ -49,7 +49,7 @@ export default function Profile() {
         await createProfile();
         return;
       }
-      
+
       if (!response.ok) {
         throw new Error('Failed to fetch profile');
       }
@@ -135,7 +135,7 @@ export default function Profile() {
           <div className="flex items-center space-x-4">
             <button
               onClick={() => router.push('/dashboard')}
-              className="flex items-center space-x-2 text-green-600 hover:text-green-700 transition-colors"
+              className="flex items-center space-x-2 text-green-600 hover:text-green-700 transition-colors cursor-pointer"
             >
               <ArrowLeft className="w-5 h-5" />
               <span>Back to Dashboard</span>
@@ -145,7 +145,7 @@ export default function Profile() {
               <span className="text-xl font-bold text-gray-800">EcoTracker</span>
             </div>
           </div>
-          <UserButton 
+          <UserButton
             appearance={{
               elements: {
                 avatarBox: "w-10 h-10"

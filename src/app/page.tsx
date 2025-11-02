@@ -26,12 +26,12 @@ export default function Home() {
         </div>
         <div className="space-x-4">
           <SignInButton mode="modal">
-            <button className="px-4 py-2 text-green-600 hover:text-green-700 transition-colors">
+            <button className="px-4 py-2 text-green-600 hover:text-green-700 transition-colors cursor-pointer">
               Sign In
             </button>
           </SignInButton>
           <SignUpButton mode="modal">
-            <button className="px-6 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors">
+            <button className="px-6 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors cursor-pointer">
               Get Started
             </button>
           </SignUpButton>
@@ -50,12 +50,12 @@ export default function Home() {
             <span className="text-green-600">Estimator</span>
           </h1>
           <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-            Discover your daily environmental impact and take meaningful steps towards a 
-            sustainable future. Track, analyze, and reduce your carbon footprint with 
+            Discover your daily environmental impact and take meaningful steps towards a
+            sustainable future. Track, analyze, and reduce your carbon footprint with
             our AI-powered estimation tool.
           </p>
           <SignUpButton mode="modal">
-            <button className="px-8 py-4 bg-green-600 text-white text-lg rounded-lg hover:bg-green-700 transition-all transform hover:scale-105 shadow-lg">
+            <button className="cursor-pointer px-8 py-4 bg-green-600 text-white text-lg rounded-lg hover:bg-green-700 transition-all transform hover:scale-105 shadow-lg">
               Start Your Journey
             </button>
           </SignUpButton>
@@ -74,7 +74,7 @@ export default function Home() {
               AI-Powered Calculations
             </h3>
             <p className="text-gray-600">
-              Get accurate carbon footprint estimates using our advanced machine learning model 
+              Get accurate carbon footprint estimates using our advanced machine learning model
               trained on comprehensive lifestyle data.
             </p>
           </div>
@@ -85,7 +85,7 @@ export default function Home() {
               Track Your Progress
             </h3>
             <p className="text-gray-600">
-              Monitor your carbon footprint over time with detailed analytics and 
+              Monitor your carbon footprint over time with detailed analytics and
               visualizations to see your environmental impact trends.
             </p>
           </div>
@@ -96,7 +96,7 @@ export default function Home() {
               Personal Insights
             </h3>
             <p className="text-gray-600">
-              Receive personalized recommendations based on your lifestyle choices 
+              Receive personalized recommendations based on your lifestyle choices
               to help reduce your environmental impact.
             </p>
           </div>
@@ -115,11 +115,11 @@ export default function Home() {
               Ready to Make a Difference?
             </h2>
             <p className="text-xl text-green-100 mb-8 max-w-2xl mx-auto">
-              Join thousands of users who are already tracking and reducing their carbon footprint. 
+              Join thousands of users who are already tracking and reducing their carbon footprint.
               Start your sustainable journey today.
             </p>
             <SignUpButton mode="modal">
-              <button className="px-8 py-4 bg-white text-green-600 text-lg font-semibold rounded-lg hover:bg-gray-100 transition-all transform hover:scale-105 shadow-lg">
+              <button className="cursor-pointer px-8 py-4 bg-white text-green-600 text-lg font-semibold rounded-lg hover:bg-gray-100 transition-all transform hover:scale-105 shadow-lg">
                 Get Started Free
               </button>
             </SignUpButton>

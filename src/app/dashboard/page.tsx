@@ -103,17 +103,17 @@ export default function Dashboard() {
           <div className="flex items-center space-x-4">
             <button
               onClick={() => router.push('/profile')}
-              className="px-4 py-2 text-green-600 hover:text-green-700 transition-colors"
+              className="px-4 py-2 text-green-600 hover:text-green-700 transition-colors cursor-pointer"
             >
               Profile
             </button>
             <button
               onClick={() => router.push('/results')}
-              className="px-4 py-2 text-green-600 hover:text-green-700 transition-colors"
+              className="px-4 py-2 text-green-600 hover:text-green-700 transition-colors cursor-pointer"
             >
               View History
             </button>
-            <UserButton 
+            <UserButton
               appearance={{
                 elements: {
                   avatarBox: "w-10 h-10"

@@ -44,3 +44,6 @@ next-env.d.ts
 # database
 /drizzle/*.sql
 /drizzle/meta/
+
+# clerk configuration (can include secrets)
+/.clerk/

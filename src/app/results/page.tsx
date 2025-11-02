@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import { UserButton, useUser } from '@clerk/nextjs';
 import { Leaf, History, Trash2, TrendingUp, Calendar, ArrowLeft } from 'lucide-react';
 import { useRouter } from 'next/navigation';
+import CarbonFootprintGraphs from './graph';
 
 interface HistoryEntry {
   id: string;
@@ -59,7 +60,7 @@ export default function Results() {
 
   const clearAllHistory = async () => {
     if (!confirm('Are you sure you want to clear all history?')) return;
-    
+
     try {
       const response = await fetch('/api/history', {
         method: 'DELETE',
@@ -92,7 +93,7 @@ export default function Results() {
           <div className="flex items-center space-x-4">
             <button
               onClick={() => router.push('/dashboard')}
-              className="flex items-center space-x-2 text-green-600 hover:text-green-700 transition-colors"
+              className="cursor-pointer flex items-center space-x-2 text-green-600 hover:text-green-700 transition-colors"
             >
               <ArrowLeft className="w-5 h-5" />
               <span>Back to Dashboard</span>
@@ -105,11 +106,11 @@ export default function Results() {
           <div className="flex items-center space-x-4">
             <button
               onClick={() => router.push('/profile')}
-              className="px-4 py-2 text-green-600 hover:text-green-700 transition-colors"
+              className="px-4 py-2 text-green-600 hover:text-green-700 transition-colors cursor-pointer"
             >
               Profile
             </button>
-            <UserButton 
+            <UserButton
               appearance={{
                 elements: {
                   avatarBox: "w-10 h-10"
@@ -198,6 +199,9 @@ export default function Results() {
                 <div className="text-gray-600">calculations</div>
               </motion.div>
             </div>
+
+            {/* Data Visualization Charts */}
+            <CarbonFootprintGraphs history={history} />
 
             {/* History Table */}
             <motion.div
