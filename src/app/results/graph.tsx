@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useMemo } from 'react';
+import { useState, useMemo } from 'react';
 import {
     LineChart,
     Line,
@@ -95,7 +95,7 @@ export default function CarbonFootprintGraphs({ history }: GraphProps) {
         ].filter(item => item.value > 0);
 
         // 3. Monthly comparison (bar chart)
-        const monthlyData = sortedHistory.reduce((acc: any[], entry) => {
+        const monthlyData = sortedHistory.reduce((acc: { month: string; total: number; count: number; average: number }[], entry) => {
             const month = new Date(entry.createdAt).toLocaleDateString('en-US', {
                 month: 'short',
                 year: 'numeric'
@@ -120,7 +120,7 @@ export default function CarbonFootprintGraphs({ history }: GraphProps) {
         }, []);
 
         // 4. Transport mode comparison (bar chart)
-        const transportData = history.reduce((acc: any[], entry) => {
+        const transportData = history.reduce((acc: { mode: string; total: number; count: number; average: number }[], entry) => {
             const mode = entry.transportMode;
             const existing = acc.find(item => item.mode === mode);
             const footprint = parseFloat(entry.predictedCarbonFootprint);
