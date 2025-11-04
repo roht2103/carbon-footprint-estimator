@@ -47,7 +47,7 @@ export default function Dashboard() {
           });
         }
       } catch (error) {
-        console.log('Note: User creation will happen on profile visit');
+        console.log('Note: User creation will happen on profile visit', error);
       }
     };
 
